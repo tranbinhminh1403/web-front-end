@@ -22,7 +22,7 @@ function Cart() {
     }
 
     // Fetch cart items
-    fetch("http://localhost:8080/api/v1/cart", {
+    fetch("https://web-back-end-1.onrender.com/api/v1/cart", {
       headers: {
         "Authorization": `Bearer ${token}` // Include token in headers
       }
@@ -38,7 +38,7 @@ function Cart() {
       .catch((error) => console.error("Error:", error));
 
     // Fetch user data
-    fetch("http://localhost:8080/api/v1/auth/get-user", {
+    fetch("https://web-back-end-1.onrender.com/api/v1/auth/get-user", {
       headers: {
         "Authorization": `Bearer ${token}`
       }
@@ -91,7 +91,7 @@ function Cart() {
       return;
     }
 
-    fetch("http://localhost:8080/api/v1/cart/update-status", {
+    fetch("https://web-back-end-1.onrender.com/api/v1/cart/update-status", {
       method: 'PUT', // Use PUT method
       headers: {
         "Authorization": `Bearer ${token}`
@@ -127,7 +127,7 @@ function Cart() {
       return;
     }
 
-    fetch(`http://localhost:8080/api/v1/cart/delete/${cartItemId}`, {
+    fetch(`https://web-back-end-1.onrender.com/api/v1/cart/delete/${cartItemId}`, {
       method: 'DELETE',
       headers: {
         "Authorization": `Bearer ${token}`
