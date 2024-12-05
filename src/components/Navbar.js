@@ -61,7 +61,11 @@ function Navbar() {
                 className="h-10 w-10 mr-2"
                 alt="logo"
               />
+              
             </Link>
+            <span className="font-bold text-white hidden lg:block cursor-pointer">BUY PC 
+              <p className="text-xs font-light">.com</p>
+            </span>
           </div>
 
           <div className="relative sm:-translate-x-20 md:-translate-x-36 lg:hidden">
