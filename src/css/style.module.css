@@ -1,0 +1,9 @@
+.originalPrice {
+
+}
+
+@media (max-width: 768px) {
+  .originalPrice {
+    display: none;
+  }
+}

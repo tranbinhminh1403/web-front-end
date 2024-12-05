@@ -1,0 +1,6 @@
+.button-1 {
+    border-radius: 4px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(185 28 28 / var(--tw-bg-opacity));
+    color: white;
+}
