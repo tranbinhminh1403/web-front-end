@@ -4,7 +4,6 @@ import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { formatCash } from "../utils/formatCash";
 import { ProductsCard } from "./ProductsCard";
-import { LoadingOutlined } from "@ant-design/icons";
 
 function Home() {
   const [isHovered, setIsHovered] = useState(false);
@@ -34,7 +33,7 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    fetch(`https://web-back-end-1.onrender.com/api/v1/products/filter?category=laptop`)
+    fetch(`http://localhost:8080/api/v1/products/filter?category=laptop`)
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
@@ -49,7 +48,7 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    fetch(`https://web-back-end-1.onrender.com/api/v1/products/filter?category=pc`)
+    fetch(`http://localhost:8080/api/v1/products/filter?category=pc`)
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
@@ -64,7 +63,7 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    fetch(`https://web-back-end-1.onrender.com/api/v1/products/filter?category=vga`)
+    fetch(`http://localhost:8080/api/v1/products/filter?category=vga`)
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
@@ -212,8 +211,7 @@ function Home() {
                 <h1 className="text-2xl font-bold">Laptop bán chạy</h1>
               </div>
 
-              {/* Grid  */}
-              {products.length > 0 ? (
+              
               <div className={`grid grid-cols-5 lg:gap-3 gap-1`}>
                 {products.slice(0, 5).map((product) => (
                   <Link
@@ -229,11 +227,6 @@ function Home() {
                   </Link>
                 ))}
               </div>
-              ) : (
-                <div className="flex justify-center items-center h-screen">
-                  <LoadingOutlined style={{ color: "#DC2626" }} />
-                </div>
-              )}
             </div>
           </div>
           <div className=" mt-8">
@@ -246,45 +239,8 @@ function Home() {
                 <div className="flex space-x-4"></div>
               </div>
 
-              {/* Grid  */}
-              {productsPC.length > 0 ? (
-              <div className={`grid grid-cols-${numProducts} gap-4`}>
-                {productsPC.slice(rndInt, rndInt + numProducts).map((product) => (
-                  <Link
-                    to={`/productdetail/${product.product_id}`}
-                    key={product.product_id}
-                  >
-                    <div
-                      key={product.product_id}
-                      className="product-card p-4 rounded-lg shadow hover:shadow-lg"
-                    >
-                      <ProductsCard product={product} />
-                    </div>
-                  </Link>
-                  ))}
-                </div>
-              ) : (
-                <div className="flex justify-center items-center h-screen">
-                  <LoadingOutlined style={{ color: "#DC2626" }} />
-                </div>
-              )}
-            </div>
-          </div>
-          <div className=" mt-8 mb-12">
-            <div className="bg-white p-4 ">
-      
-              <div className="flex justify-between items-center mb-4">
-                <h1 className="text-2xl font-bold">Linh kiện bán chạy</h1>
-              </div>
-
-              <div className="flex justify-between items-center mb-4">
-                <div className="flex space-x-4"></div>
-              </div>
-
-              {/* Grid  */}
-              {productsVGA.length > 0 ? (
-              <div className={`grid grid-cols-${numProducts} gap-4`}>
-                {productsVGA.slice(rndInt, rndInt + numProducts).map((product) => (
+              <div className={`grid grid-cols-5 lg:gap-3 gap-1`}>
+                {products.slice(0, 5).map((product) => (
                   <Link
                     to={`/productdetail/${product.product_id}`}
                     key={product.product_id}
@@ -298,11 +254,34 @@ function Home() {
                   </Link>
                 ))}
               </div>
-              ) : (
-                <div className="flex justify-center items-center h-screen">
-                  <LoadingOutlined style={{ color: "#DC2626" }} />
-                </div>
-              )}
+            </div>
+          </div>
+          <div className=" mt-8 mb-12">
+            <div className="bg-white p-4 ">
+      
+              <div className="flex justify-between items-center mb-4">
+                <h1 className="text-2xl font-bold">Linh kiện bán chạy</h1>
+              </div>
+
+              <div className="flex justify-between items-center mb-4">
+                <div className="flex space-x-4"></div>
+              </div>
+
+              <div className={`grid grid-cols-5 lg:gap-3 gap-1`}>
+                {products.slice(0, 5).map((product) => (
+                  <Link
+                    to={`/productdetail/${product.product_id}`}
+                    key={product.product_id}
+                  >
+                    <div
+                      key={product.product_id}
+                      className="product-card p-4 rounded-lg shadow hover:shadow-lg"
+                    >
+                      <ProductsCard product={product} />
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
