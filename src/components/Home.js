@@ -243,7 +243,7 @@ function Home() {
             </div>
             <div className="bg-white p-4 ">
               <div className="flex justify-between items-center mb-4">
-                <h1 className="text-2xl font-bold">Pc bán chạy</h1>
+                <h1 className="text-2xl font-bold">PC bán chạy</h1>
               </div>
 
               <div className="flex justify-between items-center mb-4">
@@ -253,7 +253,7 @@ function Home() {
              
               {productsPC.length > 0 ? (
               <div className={`grid grid-cols-5 lg:gap-3 gap-1`}>
-                {products.slice(0, 5).map((product) => (
+                {productsPC.slice(0, 5).map((product) => (
                   <Link
                     to={`/productdetail/${product.product_id}`}
                     key={product.product_id}
@@ -288,7 +288,7 @@ function Home() {
               
               {productsVGA.length > 0 ? (
               <div className={`grid grid-cols-5 lg:gap-3 gap-1`}>
-                {products.slice(0, 5).map((product) => (
+                {productsVGA.slice(0, 5).map((product) => (
                   <Link
                     to={`/productdetail/${product.product_id}`}
                     key={product.product_id}
