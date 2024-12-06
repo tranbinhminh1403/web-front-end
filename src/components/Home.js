@@ -208,7 +208,7 @@ function Home() {
         <div>
           <div className=" mt-8">
             <div>
-              <img src="qc1.png" alt="" />
+              <img src="/qc1.png" alt="" />
             </div>
             <div className="bg-white p-4 ">
               <div className="flex justify-between items-center mb-4">
